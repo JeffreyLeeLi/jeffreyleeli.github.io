@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Jeffrey Lee Li's Share
+tagline: Code A Better Future
 ---
 {% include JB/setup %}
 
