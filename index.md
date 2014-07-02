@@ -5,7 +5,7 @@ tagline: Code A Better Future
 ---
 {% include JB/setup %}
 
-## Sample Posts
+## Latest Posts
 
 <ul class="posts">
   {% for post in site.posts %}
