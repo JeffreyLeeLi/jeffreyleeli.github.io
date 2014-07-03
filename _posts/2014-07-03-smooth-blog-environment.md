@@ -37,4 +37,9 @@ tags: []
 - As in freedom: you can choose what you like
 - Also means free beer: there's no fees
 
+### I can embrace the maxim:
+
+- Perfection is the direction, not the goal
+- You can always approach it, constantly and progressively, never arrive there
+
 ## You wanna learn from genius?
