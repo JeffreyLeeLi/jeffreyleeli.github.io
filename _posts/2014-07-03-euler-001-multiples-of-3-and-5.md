@@ -24,6 +24,8 @@ The most intuitive and straight solution, for me at least, is loop over and sum 
 
 ### Show me the source!
 
+`main.go`
+
 	package main
 
 	import "fmt"
@@ -68,6 +70,8 @@ As can be easily noted, duration will increase with the upper limit.
 Before measuring furtherly, let's make the work easier.
 
 ### Show me the source! Again!
+
+`main.go`
 
 	package main
 
@@ -177,6 +181,8 @@ We need substract that from the final result.
 
 So put it in code:
 
+`main.go`
+
 	package main
 
 	import (
@@ -271,6 +277,8 @@ Almost. Not yet: number overflow and odd when `n <= 15`.
 Use `uint64` instead.
 
 So let's fix it.
+
+`main.go`
 
 	package main
 
