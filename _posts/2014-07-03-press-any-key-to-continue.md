@@ -11,6 +11,10 @@ tags: []
 
 For CLI console programs, we need some mechanims to pause execution and continue as convenient as possible.
 
+While `scanf()` alike functions can do part of the work, it forces `Enter`.
+
+Our `key` here is ***any***.
+
 ## #1 pause
 
 This is the easiest one.
@@ -43,3 +47,19 @@ If not, you're likely be prompted the following error message:
 	pause: command not found
 
 ## #2 getch
+
+This is a secondory choice.
+
+`main.c`
+
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include <conio.h>
+
+	int main(int argc, char *argv[]) {
+		printf("Press any key to continue...");
+		getch();
+		return EXIT_SUCCESS;
+	}
+
+Build and run as above. Note that the application if responsible for prompt message.
