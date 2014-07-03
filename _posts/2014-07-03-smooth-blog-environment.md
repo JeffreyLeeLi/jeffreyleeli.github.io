@@ -30,6 +30,8 @@ tags: []
 - What if web page crashes or server goes down
 - ...
 
+### Everything is tracked and remembered, and can be made to reshow at breeze
+
 ### No complex configurations about domains, databases etc.
 
 ### Free! In 2 ways:
