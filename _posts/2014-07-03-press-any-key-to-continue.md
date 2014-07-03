@@ -13,7 +13,7 @@ For CLI console programs, we need some mechanims to pause execution and continue
 
 While `scanf()` alike functions can do part of the work, it forces `Enter`.
 
-Our `key` here is ***any***.
+Our `key` here is **any**.
 
 ## Solutions
 
