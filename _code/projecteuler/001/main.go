@@ -1,9 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
 
 func main() {
-	fmt.Println(multipleSumBelow(1000))
+	var (
+		n = flag.Int("n", 1000, "Upper limit: not included")
+	)
+
+	flag.Parse()
+
+	fmt.Println(multipleSumBelow(*n))
 }
 
 func multipleSumBelow(n int) int {
