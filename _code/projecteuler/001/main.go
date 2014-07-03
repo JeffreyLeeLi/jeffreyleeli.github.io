@@ -3,9 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	s := multipleSumBelow(1000)
-
-	fmt.Println(s)
+	fmt.Println(multipleSumBelow(1000))
 }
 
 func multipleSumBelow(n int) int {
