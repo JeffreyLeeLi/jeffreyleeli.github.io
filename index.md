@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Jeffrey Lee Li's Share
-tagline: Code A Better Future
+title: Jeffrey Lee Li's
+tagline: Blogging Anytime & Anywhere
 ---
 {% include JB/setup %}
 
