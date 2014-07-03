@@ -133,4 +133,118 @@ We extracted a helper func and add a flag, now we can do our craft:
 	4886589257957115052
 	go run main.go -n=10000000000  26.97s user 0.08s system 100% cpu 27.046 total
 
+See the last time? Nearly half a minute!
 
+What if the limit goes even higher? Unacceptable for us.
+
+We need a solution that is the best in constant time consuming.
+
+## Solution 2
+
+We need some math from senior high: Series. With regularities in peculiar:
+
+	1, 2, 3, 4, 5, 6, 7, 8, 9, ...
+	3, 6, 9, ...
+	5, 10, ...
+
+That's the clue! We know how to calculate the sum, given First Item, Common Difference and one of following:
+
+1. Num
+1. Last Item
+
+The equation SEEMS to be:
+
+	SumOfMultiple(3) + SumOfMultiple(5)
+
+But there's one big fault:
+
+	CommonMultipleOf(3, 5) are counted twice
+
+We need remove that from the final result.
+
+So put it in code:
+
+	package main
+
+	import (
+		"flag"
+		"fmt"
+	)
+
+	func main() {
+		var (
+			n = flag.Int("n", 1000, "Upper limit: not included")
+		)
+
+		flag.Parse()
+
+		fmt.Println(multipleSumBelow(*n))
+	}
+
+	func multipleSumBelow(n int) int {
+		s3 := seriesSumOf(3, 3, largestMultipleBelow(3, n))
+		s5 := seriesSumOf(5, 5, largestMultipleBelow(5, n))
+		s15 := seriesSumOf(15, 15, largestMultipleBelow(15, n))
+
+		return s3 + s5 - s15
+	}
+
+	func largestMultipleBelow(x, n int) int {
+		t := n - 1 // Avoid including upper limit
+		return t - t%x
+	}
+
+	func seriesSumOf(first, diff, last int) int {
+		num := (last-first)/diff + 1
+		return num * (first + last) / 2
+	}
+
+Now what:
+
+	$ time go run main.go -n=10
+	23
+	go run main.go -n=10  0.21s user 0.05s system 95% cpu 0.266 total
+
+	$ time go run main.go -n=100
+	2318
+	go run main.go -n=100  0.21s user 0.05s system 95% cpu 0.266 total
+
+	$ time go run main.go -n=1000
+	233168
+	go run main.go -n=1000  0.21s user 0.05s system 95% cpu 0.268 total
+
+	$ time go run main.go -n=10000
+	23331668
+	go run main.go -n=10000  0.21s user 0.05s system 96% cpu 0.264 total
+
+	$ time go run main.go -n=100000
+	2333316668
+	go run main.go -n=100000  0.21s user 0.05s system 95% cpu 0.268 total
+
+	$ time go run main.go -n=1000000
+	233333166668
+	go run main.go -n=1000000  0.21s user 0.05s system 96% cpu 0.263 total
+
+	$ time go run main.go -n=10000000
+	23333331666668
+	go run main.go -n=10000000  0.21s user 0.05s system 96% cpu 0.269 total
+
+	$ time go run main.go -n=100000000
+	2333333316666668
+	go run main.go -n=100000000  0.21s user 0.05s system 96% cpu 0.270 total
+
+	$ time go run main.go -n=1000000000
+	233333333166666668
+	go run main.go -n=1000000000  0.22s user 0.05s system 95% cpu 0.276 total
+
+	$ time go run main.go -n=10000000000
+	-4336782778897660756
+	go run main.go -n=10000000000  0.21s user 0.05s system 96% cpu 0.265 total
+
+Yeah~
+
+Constantant time!
+
+Perfect?
+
+Almost. Not yet: number overflow.
