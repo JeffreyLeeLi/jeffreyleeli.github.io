@@ -48,7 +48,7 @@ If not, you're likely be prompted the following error message:
 
 ## #2 getch
 
-This is a secondory choice.
+This is a secondary choice.
 
 `main.c`
 
