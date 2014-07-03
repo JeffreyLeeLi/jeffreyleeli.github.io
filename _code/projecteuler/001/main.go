@@ -20,7 +20,10 @@ func multipleSumBelow(n uint64) uint64 {
 
 	s3 = seriesSumOf(3, 3, largestMultipleBelow(3, n))
 	s5 = seriesSumOf(5, 5, largestMultipleBelow(5, n))
-	s15 = seriesSumOf(15, 15, largestMultipleBelow(15, n))
+
+	if n > 15 {
+		s15 = seriesSumOf(15, 15, largestMultipleBelow(15, n))
+	}
 
 	return s3 + s5 - s15
 }
