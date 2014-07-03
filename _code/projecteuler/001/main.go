@@ -16,13 +16,19 @@ func main() {
 }
 
 func multipleSumBelow(n int) int {
-	s := 0
+	s3 := seriesSumOf(3, 3, largestMultipleBelow(3, n))
+	s5 := seriesSumOf(5, 5, largestMultipleBelow(5, n))
+	s15 := seriesSumOf(15, 15, largestMultipleBelow(15, n))
 
-	for i := 0; i < n; i++ {
-		if i%3 == 0 || i%5 == 0 {
-			s += i
-		}
-	}
+	return s3 + s5 - s15
+}
 
-	return s
+func largestMultipleBelow(x, n int) int {
+	t := n - 1 // Avoid including upper limit
+	return t - t%x
+}
+
+func seriesSumOf(first, diff, last int) int {
+	num := (last-first)/diff + 1
+	return num * (first + last) / 2
 }
