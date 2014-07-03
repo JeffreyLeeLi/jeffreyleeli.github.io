@@ -44,21 +44,28 @@ The most intuitive and straight solution, for me at least, is loop over and sum 
 
 See? One loop, plus a branch, done.
 
-Pretty simple, ah~~~
+Save above code into `main.go`, and run:
 
-But ...
+	$ go run main.go
+	233168
 
-What about performance?
+Got the right answer. Pretty simple, ah~
 
-Save above code into `main.go`, measuring with `time`, and we get:
+But that's it?
+
+### What about performance?
+
+Measure it with `time`:
 
 	$ time go run main.go
 	233168
 	go run main.go  0.20s user 0.04s system 95% cpu 0.251 total
 
-Within half a sec, not so bad. As can be easily noted, duration will increase with the upper limit.
+Within half a sec, not so bad.
 
-So before measuring, let's make it easier for us.
+As can be easily noted, duration will increase with the upper limit.
+
+Before measuring furtherly, let's make the work easier.
 
 ### Show me the source! Again!
 
@@ -92,6 +99,8 @@ So before measuring, let's make it easier for us.
 	}
 
 We extracted a helper func and add a flag, now we can do our craft:
+
+### Benchmark with loop
 
 	$ time go run main.go -n=10
 	23
@@ -133,13 +142,15 @@ We extracted a helper func and add a flag, now we can do our craft:
 	4886589257957115052
 	go run main.go -n=10000000000  26.97s user 0.08s system 100% cpu 27.046 total
 
-See the last time? Nearly half a minute!
+See the last one? Nearly half a minute! Unacceptable for ambitious us.
 
-What if the limit goes even higher? Unacceptable for us.
+What if the limit goes even higher?
 
 We need a solution that is the best in constant time consuming.
 
 ## Solution 2
+
+### Some math
 
 We need some math from senior high: Series. With regularities in peculiar:
 
@@ -160,7 +171,9 @@ But there's one big fault:
 
 	CommonMultipleOf(3, 5) are counted twice
 
-We need remove that from the final result.
+We need substract that from the final result.
+
+### Code implementation
 
 So put it in code:
 
@@ -199,7 +212,9 @@ So put it in code:
 		return num * (first + last) / 2
 	}
 
-Now what:
+Note that we removed `for` loop.
+
+### Benchmark without loop
 
 	$ time go run main.go -n=10
 	23
@@ -241,10 +256,74 @@ Now what:
 	-4336782778897660756
 	go run main.go -n=10000000000  0.21s user 0.05s system 96% cpu 0.265 total
 
+### Hoary
+
 Yeah~
 
 Constantant time!
 
 Perfect?
 
-Almost. Not yet: number overflow.
+Almost. Not yet: number overflow and odd when `n <= 15`.
+
+### Final
+
+Use `uint64` instead.
+
+So let's fix it.
+
+	package main
+
+	import (
+		"flag"
+		"fmt"
+	)
+
+	func main() {
+		var (
+			n = flag.Uint64("n", 1000, "Upper limit: not included")
+		)
+
+		flag.Parse()
+
+		fmt.Println(multipleSumBelow(*n))
+	}
+
+	func multipleSumBelow(n uint64) uint64 {
+		var s3, s5, s15 uint64
+
+		s3 = seriesSumOf(3, 3, largestMultipleBelow(3, n))
+		s5 = seriesSumOf(5, 5, largestMultipleBelow(5, n))
+
+		if n > 15 {
+			s15 = seriesSumOf(15, 15, largestMultipleBelow(15, n))
+		}
+
+		return s3 + s5 - s15
+	}
+
+	func largestMultipleBelow(x, n uint64) uint64 {
+		var t uint64
+		t = n - 1 // Avoid including upper limit
+
+		return t - t%x
+	}
+
+	func seriesSumOf(first, diff, last uint64) uint64 {
+		var num uint64
+		num = (last-first)/diff + 1
+
+		return num * (first + last) / 2
+	}
+
+See the result.
+
+	$ time go run main.go -n=10000000000
+	4886589257957115052
+	go run main.go -n=10000000000  0.21s user 0.04s system 95% cpu 0.268 total
+
+	$ time go run main.go -n=100000000000
+	9043580029263163052
+	go run main.go -n=100000000000  0.22s user 0.05s system 97% cpu 0.284 total
+
+That's it!
