@@ -11,7 +11,7 @@ tags: [singleton, c++, template]
 
 Singleton is a common and effective design pattern to simplify resource management that is allocated only once during application's lifecycle.
 
-When multiple classes need to be singleton class, it will be tendious to turn them into singleton one by one with similar code blocks.
+When multiple classes need to be singleton class, it will be tendious to turn them into singleton one by one with almost similar code blocks.
 
 That's a kind of `bad` smell, where template class in C++ comes to help.
 
