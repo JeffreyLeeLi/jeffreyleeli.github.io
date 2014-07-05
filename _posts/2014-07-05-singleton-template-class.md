@@ -23,7 +23,7 @@ The basic requirements of implementing a singleton includes:
 - Force instantiate via static public factory method
 - Free resources automatically
 
-`Singleton.h`
+### `Singleton.h`
 
     #ifndef SINGLETON_H
     #define SINGLETON_H
@@ -67,7 +67,7 @@ The basic requirements of implementing a singleton includes:
 
 Then we can use that in our own class that is meant to be singleton.
 
-`Test.h`
+### `Test.h`
 
     #ifndef TEST_H
     #define TEST_H
@@ -90,7 +90,7 @@ Then we can use that in our own class that is meant to be singleton.
 
 And source file is as following.
 
-`Test.cpp`
+### `Test.cpp`
 
     #include "Test.h"
 
@@ -113,7 +113,7 @@ And source file is as following.
 
 Let's test them with a `main` entry.
 
-`Main.cpp`
+### `Main.cpp`
 
     #include <iostream>
 
@@ -129,6 +129,8 @@ Let's test them with a `main` entry.
         Singleton<Test>::instance()->run();
         Test_st::instance()->run();
     }
+
+### Build
 
 For my preference, I use `scons` for compiling above codes into `singleton-test` binary with following script.
 
@@ -147,6 +149,8 @@ The building process prints following output, if you care:
     g++ -o Test.o -c Test.cpp
     g++ -o singleton-test Main.o Test.o
     scons: done building targets.
+
+### Test
 
 As expected, we get following results:
 
