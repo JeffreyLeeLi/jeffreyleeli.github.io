@@ -125,6 +125,8 @@ Let's test them with a `main` entry.
         Test().run();
         Test().run();
 
+        std::cout << std::endl;
+
         std::cout << "Using Singleton Pattern" << std::endl;
         Singleton<Test>::instance()->run();
         Test_st::instance()->run();
