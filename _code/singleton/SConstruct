@@ -1,0 +1,2 @@
+env = Environment()
+env.Program(target = 'singleton-test', source = Glob('*.cpp'))
