@@ -2,8 +2,8 @@
 layout: post
 title: "Smooth Blog Environment"
 description: ""
-category: 
-tags: []
+category: Tools
+tags: [github jekyll markdown]
 ---
 {% include JB/setup %}
 

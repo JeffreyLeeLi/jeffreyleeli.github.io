@@ -2,8 +2,8 @@
 layout: post
 title: "Euler #001 Multiples of 3 and 5"
 description: ""
-category: 
-tags: []
+category: Programs
+tags: [euler]
 ---
 {% include JB/setup %}
 

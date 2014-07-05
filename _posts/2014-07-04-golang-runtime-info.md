@@ -2,8 +2,8 @@
 layout: post
 title: "Golang Runtime Info"
 description: ""
-category: 
-tags: []
+category: Programs
+tags: [golang]
 ---
 {% include JB/setup %}
 
