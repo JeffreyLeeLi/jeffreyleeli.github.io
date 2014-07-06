@@ -42,7 +42,7 @@ But only works when `pause` utility is available, which is provided by default u
 
 The `pause` command handles not only the hint message, but also i18n, e.g. on zh_CN machines:
 
-	按任意键继续...
+	请按任意键继续. . .
 
 If not, you're likely be prompted the following error message:
 
