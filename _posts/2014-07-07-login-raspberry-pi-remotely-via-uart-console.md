@@ -20,7 +20,7 @@ Remark: a UART to USB converter may be needed if your computer is not equipped w
 
 ## UART
 
-There is two rows of GPIO pins in pi's corner, near to the SD Card slot.
+There are two rows of GPIO pins in pi's corner, near to the SD Card slot.
 
 The pins we concerned are as following:
 
@@ -40,13 +40,13 @@ Pay special attention to **Rx -> Tx** and **Tx -> Rx** connections.
 
 [CoolTerm](http://freeware.the-meiers.org/) is a cross-platform solution for UART communication, which is the best one as far as I know, at least until now, ever since the minute I had my hands on it.
 
-The UART parameters for Raspberry Pi is:
+The UART parameters for Raspberry Pi are:
 
-- Baud Rate   : 115200 bps
-- Data Bits   : 8
-- Parity      : None
-- Stop Bits   : 1
-- Flow Control: No
+    - Baud Rate   : 115200 bps
+    - Data Bits   : 8
+    - Parity      : None
+    - Stop Bits   : 1
+    - Flow Control: No
 
 If you prefer, you can set `CR` to emulate `Enter` key.
 
