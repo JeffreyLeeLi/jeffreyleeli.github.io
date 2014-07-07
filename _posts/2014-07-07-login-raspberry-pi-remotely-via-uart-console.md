@@ -42,11 +42,11 @@ Pay special attention to **Rx -> Tx** and **Tx -> Rx** connections.
 
 The UART parameters for Raspberry Pi are:
 
-    - Baud Rate   : 115200 bps
-    - Data Bits   : 8
-    - Parity      : None
-    - Stop Bits   : 1
-    - Flow Control: No
+    Baud Rate   : 115200 bps
+    Data Bits   : 8
+    Parity      : None
+    Stop Bits   : 1
+    Flow Control: No
 
 If you prefer, you can set `CR` to emulate `Enter` key.
 
