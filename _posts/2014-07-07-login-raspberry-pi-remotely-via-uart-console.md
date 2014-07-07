@@ -9,7 +9,7 @@ tags: [raspberry pi, golang]
 
 ## Prerequisite
 
-I assume that you've had your baby pi configured in both hardware connections and operation system, and you can boot up and login correctly.
+I assume that you've had your baby pi configured in both hardware connections and operation system in sd card, and you can boot up and login correctly.
 
 From there, we reduce hardware, leaving only two hardware connections to your computer:
 
@@ -18,6 +18,44 @@ From there, we reduce hardware, leaving only two hardware connections to your co
 
 Remark: a UART to USB converter may be needed if your computer is not equipped with COM interface, as in my case.
 
-## UART Pins
+## UART
 
 There is two rows of GPIO pins in pi's corner, near to the SD Card slot.
+
+The pins we concerned are as following:
+
+- Pin  6: GND
+- Pin  8: Rx
+- Pin 10: Tx
+
+Which are **in order** connected to pins of converter:
+
+- GND
+- Tx
+- Rx
+
+Pay special attention to **Rx -> Tx** and **Tx -> Rx** connections.
+
+## CoolTerm
+
+[CoolTerm](http://freeware.the-meiers.org/) is a cross-platform solution for UART communication, which is the best one as far as I know, at least until now, ever since the minute I had my hands on it.
+
+The UART parameters for Raspberry Pi is:
+
+- Baud Rate   : 115200 bps
+- Data Bits   : 8
+- Parity      : None
+- Stop Bits   : 1
+- Flow Control: No
+
+If you prefer, you can set `CR` to emulate `Enter` key.
+
+## Wrap up
+
+Now that everything is ready, let's make chip hot.
+
+If nothing goes wrong, you should be prompted with following console:
+
+    Arch Linux 3.10.38-1-ARCH (ttyAMA0)
+
+    alarmpi login:
