@@ -3,7 +3,7 @@ layout: post
 title: "Login Raspberry Pi Remotely via UART Console"
 description: ""
 category: Toys
-tags: [raspberry pi, golang]
+tags: [raspberry pi]
 ---
 {% include JB/setup %}
 
@@ -59,3 +59,21 @@ If nothing goes wrong, you should be prompted with following console:
     Arch Linux 3.10.38-1-ARCH (ttyAMA0)
 
     alarmpi login:
+
+By default, the only user in `Arch Linux Arm` is the most powerful `root` with password as the same. So let login:
+
+    Welcome to Arch Linux ARM
+
+         Website: http://archlinuxarm.org
+           Forum: http://archlinuxarm.org/forum
+             IRC: #archlinux-arm on irc.Freenode.net
+
+    Last login: Wed Dec 31 17:00:26 on ttyAMA0
+    [root@alarmpi ~]# ls /
+    bin   dev  home  lost+found  opt   root  sbin  sys  usr
+    boot  etc  lib. mnt.     proc  run. srv   tmp  var
+    [root@alarmpi ~]# 
+
+Hooary!
+
+Keep fingering it, of course, I mean the keyboard.
