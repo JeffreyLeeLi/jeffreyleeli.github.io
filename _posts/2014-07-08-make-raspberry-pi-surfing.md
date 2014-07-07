@@ -72,6 +72,8 @@ As the saying goes:
 
     Where you can ssh, there's no limits.
 
+The point here is: we are freed from UART cable.
+
 ## Upgrade
 
 Although alarmpi in SD Card is the latest `2014-06-01` version, we will upgrade the entire system, 'coz it's a rolling distribution.
