@@ -1,4 +1,5 @@
 port: 6060
+markdown: kramdown
 
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
