@@ -72,3 +72,7 @@ In `algorithm` header, there is a general algorithm API: `transform`, which can 
 
         return t;
     }
+
+## Conclusion
+
+As can be seen from the code, arbitrary operation functions can be defined, in the meanwhile make full use of the API without reinvent the wheel, which is the essence of flexibility and reusability.
