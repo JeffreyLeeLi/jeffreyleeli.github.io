@@ -1,0 +1,2 @@
+env = Environment()
+env.Program(target = 'string-transform', source = Glob('*.cpp'))
