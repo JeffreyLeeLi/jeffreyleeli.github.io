@@ -1,2 +1,2 @@
 env = Environment()
-env.Program(target = 'string-transform', source = Glob('*.cpp'))
+env.Program(target = 'string-transform-test', source = Glob('*.cpp'))
