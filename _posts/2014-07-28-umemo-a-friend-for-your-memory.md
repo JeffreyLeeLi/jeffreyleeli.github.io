@@ -7,6 +7,10 @@ tags: [qt]
 ---
 {% include JB/setup %}
 
+## Have a look first.
+
+![uMemo Main UI](../image/uMemo-20140729.png)
+
 ## What's it for?
 
 ## Why I create it?
