@@ -16,3 +16,12 @@ For decoupling of modules, **completely**, and I mean it.
 ## How?
 
 ### 
+
+## Result
+
+Under and only there, Windows with MinGW compiler, we get following correct result:
+
+    Circle::draw
+    Rectangle::draw
+    end world
+    Press <RETURN> to close this window...
