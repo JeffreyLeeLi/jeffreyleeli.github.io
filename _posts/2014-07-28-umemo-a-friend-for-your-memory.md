@@ -29,6 +29,21 @@ So when I try to teach my children how to pronounce Chinese words, it already ea
 
 ## What's the goals?
 
+Here is a wish list for the project, some of which are completed already, yet some are far to reach.
+
+I put as many as I can figure out here for reference later:
+
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+
 ## What's current status?
 
 There have been 3 days since starting from zero, and I have gone through 3 major milestones:
