@@ -9,7 +9,7 @@ tags: [qt]
 
 ## Have a look first.
 
-![uMemo Main UI](../image/uMemo-20140729.png)
+![uMemo Main UI](../image/uMemo-Main-UI.png)
 
 ## What's it for?
 
