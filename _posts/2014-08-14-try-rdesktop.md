@@ -9,8 +9,8 @@ tags: []
 
 ## Setup
 
-From: Archlinux
-To: Windows XP
+From: Archlinux | Mac OS X
+To: Windows XP | Windows 7 | Windows 8
 
 ## Configuration
 
@@ -30,4 +30,5 @@ Create a password
 
 ## Problems
 
-- Sessions can't be shared among multiple users
+- Sessions can't be shared among multiple connections of the same user
+- Sessions can't coexist among multiple users
