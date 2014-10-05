@@ -6,3 +6,12 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+
+    QDialog *
+
+    Qt::WindowModality
+
+    QMessageBox *msgBox = new QMessageBox(&win);
+    msgBox->setWindowFlags(Qt::Sheet);
+    msgBox->show();
+    msgBox->exec();
