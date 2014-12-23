@@ -17,6 +17,20 @@ Replace SuperDrive with SSD HD, preserving original hard disk.
 
 If not used this way, I rarely use the minidp port at all.
 
+Tips after using for a while.
+
+### Resolution
+
+### Dock
+
+### Dashboard
+
+### Window Zooming
+
+### Mission Control
+
+### Space Switching
+
 ## USB Brancher: 4 in 1
 
 I got additional mouse, keyboard for extended screen. I have to connect to iPhone, Raspberry Pi, and maybe an Android Phone.
