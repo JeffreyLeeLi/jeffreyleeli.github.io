@@ -52,3 +52,10 @@ As a bonus, it doesn't occupy physical interface, as well as saving another wire
 ## Firewire
 
 Have not got any good ideas, any recommendations?
+
+## Problems
+
+Display Adapter causes following problems:
+
+- Audio becomes unavailable whenever connected to second display. Yet restore to normal if detached.
+- One workspace is lost if detached.
