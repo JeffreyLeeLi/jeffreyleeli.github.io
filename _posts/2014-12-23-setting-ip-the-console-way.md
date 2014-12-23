@@ -7,11 +7,19 @@ tags: []
 ---
 {% include JB/setup %}
 
-## ifconfig
+## `ifconfig`
+
+The `ifconfig` command is installed on most os distro, being used as follows:
 
     sudo ifconfig eth0 169.254.236.58
 
 Note that the config info is temperorily effective, it's dropped everytime the system reboots. Yet it can be put in a bash script for easy reconfigure.
+
+## `ip`
+
+The `ip` command's usage is a little bit weird, at least for me, to use for the 1st time.
+
+There's still something I have not figured out.
 
 ## Tip
 
