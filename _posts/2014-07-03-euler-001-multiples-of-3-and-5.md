@@ -270,7 +270,7 @@ Constantant time!
 
 Perfect?
 
-Almost. Not yet: number overflow and odd when `n <= 15`.
+Almost. Not yet: number overflow and odd when `n` is too big.
 
 ### Final
 
