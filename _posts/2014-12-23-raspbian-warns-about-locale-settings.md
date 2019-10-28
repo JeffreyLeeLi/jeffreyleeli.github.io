@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Raspbian Warns about local settings"
+title: "Raspbian Warns about locale settings"
 description: ""
 category: 
 tags: []
