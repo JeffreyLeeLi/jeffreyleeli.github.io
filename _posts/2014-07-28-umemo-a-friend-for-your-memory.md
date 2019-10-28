@@ -33,16 +33,7 @@ Here is a wish list for the project, some of which are completed already, yet so
 
 I put as many as I can figure out here for reference later:
 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
-1. 
+1. _to be added later_
 
 ## What's current status?
 
