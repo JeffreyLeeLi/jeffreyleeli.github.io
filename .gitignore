@@ -3,3 +3,4 @@
 *-test
 _site
 *.swp
+.jekyll-cache
