@@ -6,3 +6,6 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+
+image
+result in pixel coordinate
